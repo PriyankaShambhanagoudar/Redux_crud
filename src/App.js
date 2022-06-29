@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+
 import './App.css';
+import User from "./pages/user";
+import { Switch, Route } from "react-router-dom"
+import Couter from "./Couter/Couter"
+import Header from "./Navbar/Mainheader"
+import Home from "./Home/Home"
+import { Fragment } from 'react';
+import { useSelector } from 'react-redux';
+import Auth from "./userComponent/Auth"
 
 function App() {
+
+  const isAuth = useSelector(state => state.auth.isAuthenticated)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <div className="App">
+        {(isAuth && <Header />)}
+
+        {!isAuth && <Auth />}
+
+        {isAuth &&
+          (
+            <main>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/crud" component={User} />
+                <Route path="/counter" component={Couter} />
+              </Switch>
+            </main>
+          )}
+
+
+
+      </div>
+    </Fragment>
   );
 }
 

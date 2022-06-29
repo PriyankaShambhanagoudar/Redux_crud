@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "contact": "123456789",
+      "address": "India",
+      "id": 6
+    },
+    {
+      "name": "xyz",
+      "email": "xyz@gmail.com",
+      "contact": "456123789",
+      "address": "India",
+      "id": 7
+    },
+    {
+      "name": "mno",
+      "email": "mno@gmail.com",
+      "contact": "741369852",
+      "address": "India",
+      "id": 8
+    },
+    {
+      "name": "laxmi",
+      "email": "xyz@gmail.com",
+      "contact": "852147963",
+      "address": "India",
+      "id": 9
+    }
+  ]
+}
